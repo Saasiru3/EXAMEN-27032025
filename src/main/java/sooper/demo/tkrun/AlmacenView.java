@@ -62,4 +62,4 @@ public class AlmacenView {
 		return this.getFrame();
 	}
 }
-//
+//nueva
