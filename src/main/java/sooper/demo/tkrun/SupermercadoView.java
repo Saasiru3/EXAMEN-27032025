@@ -94,7 +94,7 @@ public class SupermercadoView {
 		btnEnvioAlmacen = new JButton("Enviar a almacén");
 		btnEnvioAlmacen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { //27
-				NuevaVentanaView NuevaVentana = new NuevaVentanaView();
+				AlmacenView Almacen = new AlmacenView();
 				
 			}
 		});

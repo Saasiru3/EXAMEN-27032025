@@ -25,6 +25,7 @@ import java.awt.BorderLayout;
 public class SwingMain {
 
 	private JFrame frame;
+	// private Database db;      no esta
 
 	/**
 	 * Launch the application.
@@ -46,6 +47,8 @@ public class SwingMain {
 	 * Create the application.
 	 */
 	public SwingMain() {
+		
+	
 		initialize();
 	}
 
@@ -60,28 +63,30 @@ public class SwingMain {
 		
 		JButton btnNewButton = new JButton("BIENVENIDO AL SUPERMERCADO ONLINE");
 		btnNewButton.addActionListener(new ActionListener() {
+			
+			private SupermercadoModel modelo;
+
 			public void actionPerformed(ActionEvent e) {
+				// he eliminado  y he incluido lo siguiente
+				
 				SupermercadoController controller = new SupermercadoController();
 				SupermercadoView vista = new SupermercadoView(controller);
-				SupermercadoModel modelo = new SupermercadoModel();
-				
 				controller.setVistaModel(vista, modelo);
-				
-		
-				
+							
 				}
 		}
 		);
 		
 		frame.getContentPane().add(btnNewButton, BorderLayout.CENTER);
 		
-		Database db=new Database(); //creo la base de datos de prueba
-		
-		db.createDatabase(false); //le paso el valor falso porque considero que no esta creada aun
-		db.loadDatabase(); //cargo datos de prueba
-		
+		Database db = new Database(); //1 incluyo
+		db.createDatabase(false); //1 incluyo
+		db.loadDatabase(); //1 incluyo
+			
 	}
 		
-	public JFrame getFrame() { return this.frame; }
+	public JFrame getFrame() {
+		return this.frame; 
+		}
 	
 }
