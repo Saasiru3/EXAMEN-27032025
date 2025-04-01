@@ -62,3 +62,4 @@ public class AlmacenView {
 		return this.getFrame();
 	}
 }
+//me da error de guardado
