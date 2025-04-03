@@ -25,6 +25,7 @@ import java.awt.BorderLayout;
 public class SwingMain {
 
 	private JFrame frame;
+	private JFrame frmGestioAlmacen;
 	// private Database db;      no esta
 
 	/**
@@ -63,13 +64,13 @@ public class SwingMain {
 		
 		JButton btnNewButton = new JButton("BIENVENIDO AL SUPERMERCADO ONLINE");
 		btnNewButton.addActionListener(new ActionListener() {
-			
 			private SupermercadoModel modelo;
 
 			public void actionPerformed(ActionEvent e) {
 				// he eliminado  y he incluido lo siguiente
 				
 				SupermercadoController controller = new SupermercadoController();
+				
 				SupermercadoView vista = new SupermercadoView(controller);
 				controller.setVistaModel(vista, modelo);
 							
@@ -79,14 +80,14 @@ public class SwingMain {
 		
 		frame.getContentPane().add(btnNewButton, BorderLayout.CENTER);
 		
-		Database db = new Database(); //1 incluyo
-		db.createDatabase(false); //1 incluyo
-		db.loadDatabase(); //1 incluyo
+		Database db = new Database(); //1 incluyo Creo la base de datos de prueba
+		db.createDatabase(false); //1 incluyo le paso valor falso porque no está creada aun
+		db.loadDatabase(); //1 incluyo cargo datos de prueba
 			
 	}
 		
 	public JFrame getFrame() {
-		return this.frame; 
+		return this.frmGestioAlmacen; // he cambiado frame   por frmGestionAlmacen
 		}
 	
 }

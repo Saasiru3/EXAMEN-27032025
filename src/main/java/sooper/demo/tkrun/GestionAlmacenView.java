@@ -13,14 +13,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.table.DefaultTableModel;
 
-public class AlmacenView {
+public class GestionAlmacenView {
 	
-	protected JFrame frmAlmacen;
+	protected JFrame frmGestionAlmacen;
 	private JTable table;
 	
 	
 	
-	public AlmacenView() {	//27 Inicializo Almacén
+	public GestionAlmacenView() {	//27 Inicializo Almacén
 		//lo inicializo con this initView();
 		
 		this.initView();
@@ -32,7 +32,7 @@ public class AlmacenView {
 	private void initView() {
 	
 		
-		JFrame frame = new JFrame();
+		JFrame frame = new JFrame();  //Esto crea la ventana
 		frame.setBounds(0, 0, 400, 500); // Esto da el tamaño de la ventana
 		JFrame frmAlmacen = frame;
 		frame.getContentPane().setLayout(new MigLayout("", "[grow]", "[][grow][]"));
@@ -49,12 +49,13 @@ public class AlmacenView {
 			new Object[][] {
 			},
 			new String[] {
-				"idArticulo", "idContenedor"
+				"idArticulo", "idContador"
 			}
 		));
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton = new JButton("Añadir Articulo");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		frame.getContentPane().add(btnNewButton, "cell 0 2");
 		frmAlmacen.setVisible(true);
 	}

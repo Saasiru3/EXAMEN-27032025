@@ -5,7 +5,7 @@ import java.util.List;
 import sooper.demo.util.Database;
 
 public class SupermercadoModel {
-	
+
 	Database db = new Database();
 
 	public List<Object[]> AniadirArticulosPedido(int i) {
@@ -14,7 +14,8 @@ public class SupermercadoModel {
 		
 		String sql = "SELECT * FROM ARTICULOPEDIDO WHERE IDPEDIDO = ?";
 		lista = db.executeQueryArray(sql, i);
-		return lista;
+		return lista;		
+		
 	}
 	
 }

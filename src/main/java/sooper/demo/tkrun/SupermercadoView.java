@@ -53,7 +53,9 @@ public class SupermercadoView {
 		frmSupermercado.setBounds(0,0,500,500);
 		this.controller = controlador; //aqui ya tengo vinculada la vista con el controlador que creo en el swingMain
 		
-		textField = new JTextField();
+		textField = new JTextField();// campo que introduciriamos un 1
+		frmSupermercado.getContentPane().add(texField_1, "cell 1 0,growx");
+		textField_1.setColumns(10);
 		textField.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -94,7 +96,7 @@ public class SupermercadoView {
 		btnEnvioAlmacen = new JButton("Enviar a almacén");
 		btnEnvioAlmacen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { //27
-				AlmacenView Almacen = new AlmacenView();
+				GestionAlmacenView Almacen = new GestionAlmacenView();
 				
 			}
 		});
@@ -108,8 +110,8 @@ public class SupermercadoView {
 	
 public void rellenaListaArticulos(Object[] rowArticulo) {
 		
-		this.modeloArticulo.addRow(rowArticulo);	
-		this.table.setModel(modeloArticulo);
+		this.modeloArticulo.addRow(rowArticulo);	//para añadir una fila a la tabla lo primero que tengo que añadir es la fila
+		this.table.setModel(modeloArticulo);       //una vez la tenga añadida al modelo, muestro el modelo en la tablas
 		
 	}
 }
