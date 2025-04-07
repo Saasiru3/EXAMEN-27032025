@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -46,6 +47,8 @@ public class SupermercadoView {
 		new String[] {
 				"idArticulo", "idContenedor"
 			});
+		table= new JTable();
+		table.setModel(modeloArticulo);
 		
 		
 		frmSupermercado = new JFrame();
@@ -54,8 +57,11 @@ public class SupermercadoView {
 		this.controller = controlador; //aqui ya tengo vinculada la vista con el controlador que creo en el swingMain
 		
 		textField = new JTextField();// campo que introduciriamos un 1
+		Component texField_1 = null;
 		frmSupermercado.getContentPane().add(texField_1, "cell 1 0,growx");
+		JTextField textField_1 = null;
 		textField_1.setColumns(10);
+		
 		textField.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -67,10 +73,10 @@ public class SupermercadoView {
 		frmSupermercado.getContentPane().add(textField, "cell 0 0,growx");
 		textField.setColumns(10);
 		
-		JButton btnAniadirPedido = new JButton("Añadir Pedido");
-		btnAniadirPedido.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				controller.AniadirArticulosPedido(Integer.parseInt(textField.getText()));
+		JButton btnAniadirPedido = new JButton("Añadir Pedido"); //Crea el boton Añadir Pedido
+		btnAniadirPedido.addActionListener(new ActionListener() {//es el escuchador
+			public void actionPerformed(ActionEvent e) { //es cuando apretamos el boton
+				controller.AniadirArticulosPedido(Integer.parseInt(textField.getText())); //llamada al controlador
 			}
 		});
 		

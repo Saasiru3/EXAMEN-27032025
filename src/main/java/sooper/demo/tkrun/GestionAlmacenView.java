@@ -54,8 +54,7 @@ public class GestionAlmacenView {
 		));
 		scrollPane.setViewportView(table);
 		
-		JButton btnNewButton = new JButton("Añadir Articulo");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		JButton btnNewButton = new JButton("Añadir Artículo");
 		frame.getContentPane().add(btnNewButton, "cell 0 2");
 		frmAlmacen.setVisible(true);
 	}

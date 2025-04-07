@@ -68,11 +68,14 @@ public class SwingMain {
 
 			public void actionPerformed(ActionEvent e) {
 				// he eliminado  y he incluido lo siguiente
-				
+				//SupermercadoController es una clase 
+				//controller es una clase que se encarga de gestionar la logica de negocio
+				//SupermecadoController esta declarando una variable controller
+				//new SupermercadoController es un constructor
 				SupermercadoController controller = new SupermercadoController();
 				
 				SupermercadoView vista = new SupermercadoView(controller);
-				controller.setVistaModel(vista, modelo);
+				controller.setVistaModel(new SupermercadoView(controller),new SupermercadoModel());
 							
 				}
 		}
